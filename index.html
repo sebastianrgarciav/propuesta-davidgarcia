@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propuesta para David Garcia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    body { 
+      font-family: 'Inter', sans-serif; 
+    }
+
+    /* --- Tema Blanco y Negro --- */
+    .dark-bg {
+      background-color: #111111;
+    }
+
+    /* Encabezados y glow sutil */
+    .neon-text { 
+      text-shadow: 0 0 12px rgba(255,255,255,0.15);
+    }
+
+    /* Cards interactivos */
+    .card-hover { 
+      transition: transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s; 
+    }
+    .card-hover:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 12px 30px rgba(255,255,255,0.05); 
+    }
+
+    /* CTA pulse (si se usa en el futuro) */
+    .pulse { 
+      animation: pulse 2.2s infinite; 
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1 }
+      50% { transform: scale(1.03); opacity: .92 }
+    }
+
+    /* Efecto cristal en tema oscuro */
+    .glass { 
+      background: rgba(255,255,255,0.03); 
+      backdrop-filter: blur(8px); 
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Ajustes de impresión (PDF) */
+    @media print { 
+      body { background: #ffffff; color: #000 } 
+      .no-print { display: none } 
+    }
+  </style>
+</head>
+<body class="dark-bg text-gray-300">
+  <div class="container mx-auto p-6 md:p-10">
+
+    <!-- HERO -->
+    <header class="text-center my-8">
+      <h1 class="text-4xl md:text-6xl font-black neon-text text-white">Propuesta:</h1>
+      <p class="mt-4 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">Este documento detalla la propuesta para el diseño y desarrollo de una Aplicación Web Progresiva (PWA) a medida, diseñada para la generación y distribución segura de documentos. La solución permitirá a <strong>David Garcia</strong> gestionar usuarios, generar informes y compartirlos de forma confidencial con sus clientes finales a través de un portal exclusivo.</p>
+    </header>
+
+    <!-- 1. Introducción y Beneficios -->
+    <section class="glass rounded-2xl p-6 md:p-8 my-6 shadow-lg">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-100">1. Resumen Ejecutivo & Beneficios</h2>
+      <p class="mt-4 text-gray-300">La solución se construirá sobre una arquitectura tecnológica moderna, priorizando la protección de datos, la escalabilidad y una experiencia de usuario intuitiva. Los beneficios clave de este proyecto son:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
+        <div class="card-hover p-4 rounded-lg">
+          <h3 class="font-semibold text-white">🔐 Máxima Seguridad</h3>
+          <p class="text-sm text-gray-400">Implementación de MFA y arquitectura que garantiza la confidencialidad.</p>
+        </div>
+        <div class="card-hover p-4 rounded-lg">
+          <h3 class="font-semibold text-white">⚡ Eficiencia Operativa</h3>
+          <p class="text-sm text-gray-400">Automatización en distribución de informes, reduciendo tiempos y errores.</p>
+        </div>
+        <div class="card-hover p-4 rounded-lg">
+          <h3 class="font-semibold text-white">💼 Confianza y Reputación</h3>
+          <p class="text-sm text-gray-400">Portal profesional que demuestra compromiso con la seguridad.</p>
+        </div>
+        <div class="card-hover p-4 rounded-lg">
+          <h3 class="font-semibold text-white">📈 Escalabilidad</h3>
+          <p class="text-sm text-gray-400">Base tecnológica sólida que crece con su negocio.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Beneficio Principal -->
+    <section class="glass rounded-2xl p-6 md:p-8 my-6 shadow-lg">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-100">2. El Beneficio Principal🛡️</h2>
+      <p class="mt-4 text-gray-300">Más que una aplicación: una bóveda digital de máxima seguridad para sus documentos. La forma en que una empresa protege la información de sus clientes refleja su profesionalismo y fiabilidad. Nuestra solución elimina los riesgos de usar canales inseguros (email, WhatsApp) a través de múltiples capas de seguridad:</p>
+
+      <div class="overflow-x-auto mt-6">
+        <table class="w-full">
+          <thead>
+            <tr class="text-left text-sm text-gray-500">
+              <th class="w-1/3 p-3">Característica de Seguridad</th>
+              <th class="w-2/3 p-3">Beneficio Directo para su Negocio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-gray-800">
+              <td class="align-top p-3 text-gray-200">Autenticación de Múltiples Factores (MFA)</td>
+              <td class="p-3 text-gray-400">Una contraseña robada se vuelve inútil. Un atacante necesitaría también acceso físico al celular del cliente, eliminando el riesgo de robo de cuentas.</td>
+            </tr>
+            <tr class="border-t border-gray-800">
+              <td class="align-top p-3 text-gray-200">URLs de Descarga Temporales</td>
+              <td class="p-3 text-gray-400">No existen enlaces permanentes que puedan ser filtrados. Cada enlace expira en minutos, garantizando acceso "justo a tiempo" solo a la persona autorizada.</td>
+            </tr>
+            <tr class="border-t border-gray-800">
+              <td class="align-top p-3 text-gray-200">Aislamiento Total de Clientes</td>
+              <td class="p-3 text-gray-400">Es técnicamente imposible que un cliente vea los documentos de otro. La confidencialidad está garantizada por diseño.</td>
+            </tr>
+            <tr class="border-t border-gray-800">
+              <td class="align-top p-3 text-gray-200">Gestión de Identidad con AWS Cognito</td>
+              <td class="p-3 text-gray-400">Su empresa no almacena contraseñas; lo hace Amazon. Delegamos la responsabilidad más crítica a la infraestructura de seguridad de AWS.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-6 text-gray-300"><strong>Resultado:</strong> Control total, trazabilidad y tranquilidad de que sus activos digitales están protegidos con altos estándares.</p>
+    </section>
+
+    <!-- 3. Alcance del Proyecto -->
+    <section class="glass rounded-2xl p-6 md:p-8 my-6 shadow-lg">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-100">3. Alcance del Proyecto 🗺️</h2>
+      <p class="mt-4 text-gray-300">Desarrollaremos una PWA con dos portales principales:</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div class="p-4 rounded-lg bg-black/20">
+          <h3 class="font-semibold text-white">Módulo 1: Portal de Administración (Para David Garcia)</h3>
+          <ul class="text-gray-400 mt-2 list-disc ml-5 space-y-1">
+            <li><strong>Autenticación Segura:</strong> Registro, login y configuración obligatoria de MFA (TOTP).</li>
+            <li><strong>Dashboard Principal:</strong> Estadísticas clave y actividad reciente.</li>
+            <li><strong>Gestión de Usuarios:</strong> Crear, editar y eliminar cuentas de clientes finales.</li>
+            <li><strong>Gestión de Documentos:</strong> Subida, categorización y compartición selectiva.</li>
+          </ul>
+        </div>
+
+        <div class="p-4 rounded-lg bg-black/20">
+          <h3 class="font-semibold text-white">Módulo 2: Portal del Cliente Final</h3>
+          <ul class="text-gray-400 mt-2 list-disc ml-5 space-y-1">
+            <li><strong>Acceso Simplificado:</strong> Inicio de sesión con credenciales creadas por admin.</li>
+            <li><strong>Portal de Documentos:</strong> Vista que lista sólo los documentos compartidos con ese usuario.</li>
+            <li><strong>Descarga Segura:</strong> Enlaces temporales para descargas verificadas.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Arquitectura Tecnológica -->
+    <section class="glass rounded-2xl p-6 md:p-8 my-6 shadow-lg">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-100">4. Arquitectura Tecnológica 🏗️</h2>
+        <p class="mt-4 text-gray-300">Se utilizará una arquitectura moderna serverless para alta escalabilidad y optimización de costos.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+            <div class="text-gray-300 space-y-2">
+                <p><strong>Frontend:</strong> Next.js (React) - PWA optimizada.</p>
+                <p><strong>Backend:</strong> FastAPI (Python) - APIs rápidas y escalables.</p>
+                <p><strong>Nube:</strong> AWS (Cognito, S3, RDS, Fargate).</p>
+            </div>
+            <div class="text-gray-300">
+                <p><strong>Infraestructura adicional:</strong></p>
+                <ul class="list-disc ml-5 mt-2 text-gray-400 space-y-1">
+                    <li>IaC con Terraform para reproducibilidad.</li>
+                    <li>CI/CD con GitHub Actions.</li>
+                    <li>Monitoreo con CloudWatch / Prometheus + Grafana.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Detalle de servicios AWS -->
+        <div class="mt-8">
+            <h4 class="font-semibold text-gray-100">4.1 Detalle de Servicios AWS</h4>
+            <div class="mt-4 text-gray-300 space-y-4">
+                <div>
+                    <strong>Autenticación: AWS Cognito</strong>
+                    <p class="text-sm text-gray-400">Función: Gestiona registro, inicio de sesión y verificación de identidad. Beneficio: Permite MFA robusto y delega el almacenamiento seguro de credenciales a AWS.</p>
+                </div>
+                <div>
+                    <strong>Almacenamiento: AWS S3</strong>
+                    <p class="text-sm text-gray-400">Función: Almacén de documentos (PDF). Beneficio: Generación de URLs pre-firmadas temporales para descargas seguras.</p>
+                </div>
+                <div>
+                    <strong>Base de Datos: AWS RDS (PostgreSQL)</strong>
+                    <p class="text-sm text-gray-400">Función: Metadatos, permisos y registros de auditoría. Beneficio: Backups gestionados y rendimiento transaccional.</p>
+                </div>
+                <div>
+                    <strong>Compute: AWS Fargate (ECS)</strong>
+                    <p class="text-sm text-gray-400">Función: Ejecuta contenedores con el backend. Beneficio: Escalado automático y menos administración de infraestructura.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.2 Criterios de Ciberseguridad Aplicados -->
+        <div class="mt-8">
+            <h4 class="font-semibold text-gray-100">4.2 Criterios de Ciberseguridad Aplicados</h4>
+            <p class="mt-2 text-gray-400 text-sm">En lugar de una simple comparativa, detallamos los pilares de seguridad sobre los que se construye la solución para garantizar la máxima protección de la información:</p>
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-400">
+                <div class="p-4 rounded-lg bg-black/20">
+                    <h5 class="font-semibold text-gray-200">1. Control de Acceso de Múltiples Capas</h5>
+                    <p class="text-sm mt-1">Implementamos Autenticación de Múltiples Factores (MFA) obligatoria a través de AWS Cognito. Una contraseña vulnerada es inútil sin el segundo factor físico (app de autenticación), neutralizando el riesgo de robo de credenciales.</p>
+                </div>
+                <div class="p-4 rounded-lg bg-black/20">
+                    <h5 class="font-semibold text-gray-200">2. Cifrado de Extremo a Extremo</h5>
+                    <p class="text-sm mt-1">Toda la comunicación viaja cifrada con TLS 1.3. Los documentos en reposo dentro de AWS S3 y los datos en la base de datos (RDS) están cifrados con AES-256, protegiendo la información incluso a nivel de infraestructura física.</p>
+                </div>
+                <div class="p-4 rounded-lg bg-black/20">
+                    <h5 class="font-semibold text-gray-200">3. Aislamiento y Mínimo Privilegio</h5>
+                    <p class="text-sm mt-1">La arquitectura garantiza un aislamiento total entre clientes (multi-tenant seguro). Cada usuario solo puede acceder a los recursos explícitamente asignados a él, eliminando el riesgo de fugas de información cruzadas.</p>
+                </div>
+                <div class="p-4 rounded-lg bg-black/20">
+                    <h5 class="font-semibold text-gray-200">4. Ciclo de Vida Seguro del Documento</h5>
+                    <p class="text-sm mt-1">Los documentos no se acceden por enlaces permanentes. Se generan URLs de descarga seguras y temporales (pre-firmadas) que expiran en minutos. Esto asegura que solo el usuario autenticado, en el momento preciso, pueda descargar el archivo.</p>
+                </div>
+            </div>
+            <p class="mt-4 text-gray-400 text-sm"><strong>Conclusión:</strong> La seguridad no es una característica, sino el fundamento del diseño. Se aplican las mejores prácticas de la industria utilizando servicios gestionados de AWS para minimizar la superficie de ataque y garantizar la confidencialidad e integridad de sus datos.</p>
+        </div>
+    </section>
+
+    <!-- 5. Propuesta Económica -->
+    <section class="glass rounded-2xl p-6 md:p-8 my-6 shadow-lg">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-100">5. Propuesta Económica Detallada 💰</h2>
+      <p class="mt-4 text-gray-300">Coste por hora: <strong>S/ 40.00 + IGV</strong>. A continuación, las fases, horas y costos estimados:</p>
+
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="text-left text-sm text-gray-500">
+              <th class="p-3 w-2/5">Fase</th>
+              <th class="p-3 w-2/5">Tareas específicas</th>
+              <th class="p-3 w-1/5 text-right">Horas Est.</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-400">
+            <tr class="border-t border-gray-800"><td class="p-3 text-gray-200">Fase 0: Arquitectura y Configuración</td><td class="p-3">Diseño AWS, config. IAM, Cognito, S3, RDS. Repos.</td><td class="p-3 text-right">20</td></tr>
+            <tr class="border-t border-gray-800"><td class="p-3 text-gray-200">Fase 1: Autenticación y Usuarios</td><td class="p-3">Modelos y endpoints, integración Cognito, MFA TOTP.</td><td class="p-3 text-right">65</td></tr>
+            <tr class="border-t border-gray-800"><td class="p-3 text-gray-200">Fase 2: Módulo Documentos (Admin)</td><td class="p-3">Endpoints, URLs pre-firmadas, UI de gestión.</td><td class="p-3 text-right">55</td></tr>
+            <tr class="border-t border-gray-800"><td class="p-3 text-gray-200">Fase 3: Portal Cliente y PWA</td><td class="p-3">Endpoints cliente, portal final, Service Worker.</td><td class="p-3 text-right">40</td></tr>
+            <tr class="border-t border-gray-800"><td class="p-3 text-gray-200">Fase 4: Despliegue y Pruebas</td><td class="p-3">Dockerfile, CI/CD, despliegue, pruebas E2E.</td><td class="p-3 text-right">30</td></tr>
+            <tr class="border-t border-gray-800"><td class="p-3 text-gray-200">Gestión y Calidad</td><td class="p-3">Reuniones, QA, documentación y soporte.</td><td class="p-3 text-right">20</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-8 text-right text-gray-300">
+        <p>Subtotal: 230 Horas — <strong>S/ 9,200.00</strong></p>
+        <p>IGV (18%): S/ 1,656.00</p>
+        <p class="text-xl mt-3 font-bold text-white">TOTAL INVERSIÓN: S/ 10,856.00</p>
+        <p class="mt-4 text-gray-400"><strong>Modalidad de Pago:</strong> El monto total puede ser fraccionado en <strong>tres pagos mensuales</strong> para facilitar la inversión.</p>
+        <p class="mt-3 text-sm text-gray-500">Nota: Los costos de hosting en AWS se estimarán y facturarán por separado.</p>
+      </div>
+    </section>
+
+    <!-- 6. Plan de Trabajo -->
+    <section class="glass rounded-2xl p-6 md:p-8 my-6 shadow-lg">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-100">6. Plan de Trabajo 🗓️</h2>
+        <p class="mt-4 text-gray-300">Proponemos un desarrollo ágil con duración estimada de <strong>7 a 9 semanas</strong>. A continuación, la distribución por semanas:</p>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-gray-400">
+            <div class="p-4 rounded-lg bg-black/20"><h4 class="font-semibold text-gray-200">Semanas 1-2</h4><p class="text-sm mt-1">Arquitectura, configuración de Cognito, S3 y RDS, pipeline CI/CD.</p></div>
+            <div class="p-4 rounded-lg bg-black/20"><h4 class="font-semibold text-gray-200">Semanas 3-5</h4><p class="text-sm mt-1">Desarrollo de Portal de Administración y módulo de documentos.</p></div>
+            <div class="p-4 rounded-lg bg-black/20"><h4 class="font-semibold text-gray-200">Semanas 6-7</h4><p class="text-sm mt-1">Portal del Cliente (PWA), service worker y pruebas funcionales.</p></div>
+            <div class="p-4 rounded-lg bg-black/20"><h4 class="font-semibold text-gray-200">Semanas 8-9</h4><p class="text-sm mt-1">Despliegue, pruebas de seguridad, pruebas de carga y capacitación.</p></div>
+        </div>
+    </section>
+
+    <!-- 7. Estimación de Gastos Mensuales en AWS -->
+    <section class="glass rounded-2xl p-6 md:p-8 my-6 shadow-lg">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-100">7. Estimación de Gastos Mensuales AWS ☁️</h2>
+      <p class="mt-4 text-gray-300">Para una base inicial de <strong>20 usuarios activos</strong>, se proyectan los siguientes costos aproximados mensuales:</p>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="text-left text-sm text-gray-500">
+              <th class="p-3 w-1/3">Servicio AWS</th>
+              <th class="p-3 w-1/3">Detalle</th>
+              <th class="p-3 w-1/3 text-right">Costo Estimado Mensual</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-400">
+            <tr class="border-t border-gray-800"><td class="p-3">Cognito</td><td class="p-3">20 MAUs (capa gratuita)</td><td class="p-3 text-right">S/ 0.00</td></tr>
+            <tr class="border-t border-gray-800"><td class="p-3">S3</td><td class="p-3">~10GB almacenamiento + tráfico</td><td class="p-3 text-right">~ S/ 15.00</td></tr>
+            <tr class="border-t border-gray-800"><td class="p-3">RDS PostgreSQL</td><td class="p-3">Instancia db.t3.micro</td><td class="p-3 text-right">~ S/ 120.00</td></tr>
+            <tr class="border-t border-gray-800"><td class="p-3">Fargate (ECS)</td><td class="p-3">1 servicio backend</td><td class="p-3 text-right">~ S/ 200.00</td></tr>
+            <tr class="border-t border-gray-800"><td class="p-3">Otros</td><td class="p-3">Monitoreo, transferencia</td><td class="p-3 text-right">~ S/ 50.00</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-6 text-gray-300 text-right"><strong>Total Aproximado: ~ S/ 385.00 mensuales</strong> (Este monto puede variar según el uso real).</p>
+    </section>
+
+  </div>
+</body>
+</html>
+
